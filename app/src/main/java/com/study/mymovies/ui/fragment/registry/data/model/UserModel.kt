@@ -1,0 +1,15 @@
+package com.study.mymovies.ui.fragment.registry.data.model
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "user")
+data class UserModel(
+    @PrimaryKey(autoGenerate = true)
+    val employeeNumber: Int,
+    val fullName: String,
+    val phone: String,
+    val email: String,
+    val address: String,
+    val image: String
+)

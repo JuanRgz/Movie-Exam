@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/moviesFragment"
+        android:title="@string/movies"
+        android:icon="@drawable/ic_movie"/>
+    <item
+        android:id="@+id/mapsFragment"
+        android:title="@string/maps"
+        android:icon="@drawable/ic_map"/>
+    <item
+        android:id="@+id/uploadImageFragment"
+        android:title="@string/upload_images"
+        android:icon="@drawable/ic_image"/>
+    <item
+        android:id="@+id/usersFragment"
+        android:title="@string/users"
+        android:icon="@drawable/ic_account"/>
+
+</menu>
