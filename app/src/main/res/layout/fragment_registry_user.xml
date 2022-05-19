@@ -63,7 +63,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/telefono"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:inputType="numberSigned"
+                    android:layout_height="wrap_content"
+                    android:maxLength="10"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout

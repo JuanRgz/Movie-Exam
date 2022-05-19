@@ -49,7 +49,7 @@ class LocationService : Service() {
             val runnable = object : Runnable {
                 override fun run() {
                     postDelayed(this, INTERVAL)
-                    with(LocationRepository()) {
+                    with(FirebaseRepository()) {
                         getUserLocation(applicationContext) {
                             Log.e("Location", it.toString())
                             if (it != null) {

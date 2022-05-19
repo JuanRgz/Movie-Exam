@@ -15,4 +15,6 @@
     <string name="users">Usuarios</string>
     <string name="worker">Obteniendo ubicación</string>
     <string name="app_name">Movies</string>
+    <string name="save_image">Guardar Imagen</string>
+    <string name="close">Cerrar</string>
 </resources>

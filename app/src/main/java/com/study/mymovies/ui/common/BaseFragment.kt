@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.study.mymovies.ui.fragment.registry.data.model.UserModel
 
 abstract class BaseFragment<B: ViewDataBinding>: Fragment() {
 
