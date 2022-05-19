@@ -1,8 +1,6 @@
 package com.study.mymovies.ui.fragment.images
 
-import android.util.Log
 import androidx.fragment.app.viewModels
-import com.google.firebase.firestore.FirebaseFirestore
 import com.study.movies.ui.fragment.images.UploadImageViewModel
 import com.study.mymovies.R
 import com.study.mymovies.databinding.FragmentUploadImageBinding
