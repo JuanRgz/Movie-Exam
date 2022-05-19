@@ -1,6 +1,7 @@
 package com.study.mymovies.ui.fragment.map
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,22 +9,23 @@ import androidx.fragment.app.Fragment
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.firestore.FirebaseFirestore
 import com.study.mymovies.R
+import com.study.mymovies.core.location.LocationRepository
 
 class MapsFragment : Fragment() {
+    var mapReady: Boolean = false
+    var Map: GoogleMap? = null
 
     private val callback = OnMapReadyCallback { googleMap ->
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mapReady = true
+        Map = googleMap
     }
-
-    private lateinit var locationCallback: LocationCallback
-    private lateinit var locationRequest: LocationRequest
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,5 +40,21 @@ class MapsFragment : Fragment() {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
 
+        getLocations()
+    }
+
+    private fun getLocations(){
+        LocationRepository().getLocation({
+            //limpiamos la lista una vez notificada de algun cambio
+            Map?.clear()
+        }, { place ->
+            //Agregamos marcadores uno a uno
+            Map?.let{ map ->
+                map.clear()
+                val location = LatLng(place.latitud, place.longitud)
+                map.addMarker(MarkerOptions().position(location))
+                map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16F))
+            }
+        })
     }
 }
