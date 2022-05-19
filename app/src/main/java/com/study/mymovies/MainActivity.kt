@@ -35,19 +35,6 @@ class MainActivity : AppCompatActivity() {
         bind = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bind.root)
         startServiceLocation()
-        /*val place = hashMapOf(
-            "first" to "Ada",
-            "last" to "Lovelace",
-            "born" to 1815
-        )
-        Firebase.firestore.collection("place")
-            .add(place)
-            .addOnSuccessListener { documentReference ->
-                Log.d(this::class.java.simpleName, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(this::class.java.simpleName, "Error adding document", e)
-            }*/
 
         bind.apply {
 
@@ -56,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.moviesFragment,
                     R.id.mapsFragment,
                     R.id.uploadImageFragment,
+                    R.id.registerFragment,
                     R.id.usersFragment
                 ),
                 drawerLayout

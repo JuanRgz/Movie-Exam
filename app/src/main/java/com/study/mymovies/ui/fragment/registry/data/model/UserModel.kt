@@ -11,5 +11,5 @@ data class UserModel(
     val phone: String,
     val email: String,
     val address: String,
-    val image: String
+    var image: String
 )

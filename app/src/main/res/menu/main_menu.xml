@@ -14,6 +14,10 @@
         android:title="@string/upload_images"
         android:icon="@drawable/ic_image"/>
     <item
+        android:id="@+id/registerFragment"
+        android:title="@string/register"
+        android:icon="@drawable/ic_account"/>
+    <item
         android:id="@+id/usersFragment"
         android:title="@string/users"
         android:icon="@drawable/ic_account"/>

@@ -63,22 +63,20 @@ class FirebaseRepository {
         }
     }
 
-    fun saveImage(image: Uri) {
+    fun saveImage(image: Uri, unit: (Boolean) -> Unit) {
         storage.apply {
             val file = reference.child((0..999999).random().toString())
-            file.putFile(image)
+            file.putFile(image).addOnCompleteListener {
+                unit(it.isSuccessful)
+            }
         }
     }
 
-    fun getImages(image: File) {
+    fun getImages(image: File, unit: (success: Boolean) -> Unit) {
         storage.apply {
             val file = reference.child((0..999999).random().toString())
             file.putFile(Uri.fromFile(image)).addOnCompleteListener {
-                if(it.isSuccessful){
-                    it
-                }else{
-                    it
-                }
+                unit(it.isSuccessful)
             }
         }
     }

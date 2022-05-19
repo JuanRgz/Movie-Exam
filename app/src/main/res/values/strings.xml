@@ -17,4 +17,9 @@
     <string name="app_name">Movies</string>
     <string name="save_image">Guardar Imagen</string>
     <string name="close">Cerrar</string>
+    <string name="register">Registrar Usuario</string>
+    <string name="full_name">%d. %s</string>
+    <string name="save_image_success">La imagen fue guardada con exito</string>
+    <string name="save_image_success_error">Error al intentar cargar la imagen</string>
+    <string name="get_movies_error">Error al tratar de obtener las películas</string>
 </resources>

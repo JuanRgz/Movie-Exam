@@ -2,9 +2,11 @@ package com.study.mymovies.ui.fragment.home
 
 import androidx.fragment.app.viewModels
 import com.study.mymovies.R
+import com.study.mymovies.core.App
 import com.study.mymovies.core.StatusEnum
 import com.study.mymovies.databinding.FragmentHomeBinding
 import com.study.mymovies.ui.common.BaseFragment
+import com.study.mymovies.ui.utils.ResponseDialog
 import com.study.mymovies.ui.utils.showToast
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -33,6 +35,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     showLoading(false)
                 }
                 StatusEnum.ERROR -> {
+                    ResponseDialog.showDialog(requireActivity(), App.instance.getString(R.string.get_movies_error))
                     showLoading(false)
                     showToast("Error al obtener los resultados")
                 }

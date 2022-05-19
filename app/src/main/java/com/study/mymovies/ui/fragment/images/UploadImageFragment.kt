@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.provider.MediaStore
+import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
@@ -26,7 +27,10 @@ class UploadImageFragment : BaseFragment<FragmentUploadImageBinding>() {
                 // There are no request codes
                 val data = result.data?.data
                 data?.let { uri ->
-                    viewModel.saveImage(uri)
+                    bind.loading.visibility = View.VISIBLE
+                    viewModel.saveImage(uri, requireActivity()){
+                        bind.loading.visibility = View.GONE
+                    }
                 }
             }
         }

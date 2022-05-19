@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_home" >
     </fragment>
     <fragment
-        android:id="@+id/usersFragment"
+        android:id="@+id/registerFragment"
         android:name="com.study.mymovies.ui.fragment.registry.RegistryUserFragment"
         tools:layout="@layout/fragment_registry_user" />
     <fragment
@@ -22,4 +22,8 @@
         android:id="@+id/uploadImageFragment"
         android:name="com.study.mymovies.ui.fragment.images.UploadImageFragment"
         tools:layout="@layout/fragment_upload_image" />
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.study.mymovies.ui.fragment.users.UsersFragment"
+        tools:layout="@layout/fragment_users"/>
 </navigation>

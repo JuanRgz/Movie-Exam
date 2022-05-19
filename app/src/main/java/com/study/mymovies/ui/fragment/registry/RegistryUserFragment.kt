@@ -70,7 +70,7 @@ class RegistryUserFragment : BaseFragment<FragmentRegistryUserBinding>() {
                         image = imagen
                     )
                     if(validateUser(user)){
-                        viewModel.saveUser(user)
+                        viewModel.saveUser(user.apply { image = "" })
                         cleanFields()
                         ResponseDialog.showDialog(requireActivity(), "Usuario guardado exitosamente", success = true)
                     } else{
